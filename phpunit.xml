@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+	bootstrap="vendor/autoload.php"
+	colors="true"
+	columns="max"
+	defaultTestSuite="Unit"
+	printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer"
+	>
+	<testsuites>
+		<testsuite name="Unit">
+			<directory suffix="Test.php">tests/Unit</directory>
+		</testsuite>
+		<testsuite name="Functional">
+			<directory suffix="Test.php">tests/Functional</directory>
+		</testsuite>
+		<testsuite name="Integration">
+			<directory suffix="Test.php">tests/Integration</directory>
+		</testsuite>
+	</testsuites>
+	<coverage processUncoveredFiles="true">
+		<include>
+			<directory suffix=".php">app</directory>
+		</include>
+		<report>
+			<!--<clover outputFile="tests/reports/clover.xml"/>-->
+			<!--<crap4j outputFile="tests/reports/crap4j.xml" threshold="50"/>-->
+			<!--<html outputDirectory="tests/reports/html" lowUpperBound="30" highLowerBound="70"/>-->
+			<!--<php outputFile="tests/reports/coverage.php"/>-->
+			<text outputFile="php://stdout" showUncoveredFiles="false" showOnlySummary="true"/>
+			<!--<xml outputDirectory="tests/reports/xml-coverage"/>-->
+		</report>
+	</coverage>
+	<php>
+		<ini name="memory_limit" value="-1"/>
+	</php>
+</phpunit>

@@ -1,0 +1,73 @@
+{
+	"name": "stolz/vanilla",
+	"type": "project",
+	"description": "Skeleton for a vanilla PHP project",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Stolz",
+			"email": "Stolz@users.noreply.github.com",
+			"homepage": "https://github.com/Stolz",
+			"role": "Developer"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "app/"
+		},
+		"files": ["resources/helpers.php"]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests/"
+		},
+		"files": ["resources/debug.php"]
+	},
+	"require": {
+		"php": "^7.4",
+		"psy/psysh": "^0.10.7"
+	},
+	"require-dev": {
+		"friendsofphp/php-cs-fixer": "^2.18",
+		"nunomaduro/collision": "^5.3",
+		"phpcompatibility/php-compatibility": "^9.3",
+		"phpmd/phpmd": "^2.9",
+		"phpstan/phpstan": "^0.12.82",
+		"phpunit/phpunit": "^9.5",
+		"slevomat/coding-standard": "^6.4",
+		"squizlabs/php_codesniffer": "^3.5",
+		"symfony/var-dumper": "^5.2"
+	},
+	"scripts": {
+		"start-cli": "php public/index.php",
+		"start-web": "php -S localhost:8000 -t public",
+		"cli": "php resources/cli.php",
+		"lint": "bin/check-code.sh -l",
+		"fix": "bin/fix-code.sh",
+		"sniff": "bin/check-code.sh -i",
+		"stan": "bin/check-code.sh -S",
+		"mess": "bin/check-code.sh -m",
+		"stats": "bin/stats.sh",
+		"secure": "bin/fix-permissions.sh",
+		"clean": "bin/delete-old-files.sh",
+		"test": "phpunit -d max_execution_time=0 --no-coverage",
+		"test-cover": "phpunit -d max_execution_time=0",
+		"test-list": "phpunit --list-suites",
+		"test-list-default": "grep defaultTestSuite phpunit.xml",
+		"build": "composer install --no-suggest",
+		"build-prod": "composer install --no-dev --classmap-authoritative --no-suggest",
+		"hook": [
+			"@lint",
+			"@sniff",
+			"@stan",
+			"@test"
+		]
+	}
+}

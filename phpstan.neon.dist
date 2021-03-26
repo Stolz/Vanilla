@@ -1,0 +1,20 @@
+# https://phpstan.org/config-reference
+
+parameters:
+	paths:
+		- app
+		- resources
+		- tests
+
+	level: max
+
+	parallel:
+		processTimeout: 120.0
+
+	checkMissingIterableValueType: false
+
+	ignoreErrors:
+		#- '#Some error in any file#'
+		#-
+		#	message: '#Some error in a certain path#'
+		#	path: %currentWorkingDirectory%/app/foo/bar*

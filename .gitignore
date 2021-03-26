@@ -1,0 +1,12 @@
+*.kate-swp
+*.log
+*.orig
+*~
+.*~
+.directory
+.env*
+.kateproject*
+.php_cs.cache
+.phpunit.result.cache
+/tests/reports/
+/vendor/

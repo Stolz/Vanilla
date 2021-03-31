@@ -5,6 +5,7 @@
 	<description>Superset of PSR-2 rules</description>
 
 	<exclude-pattern>/bin/</exclude-pattern>
+	<exclude-pattern>/tests/reports/</exclude-pattern>
 	<exclude-pattern>/vendor/</exclude-pattern>
 
 	<!-- Load and configure external standars -->

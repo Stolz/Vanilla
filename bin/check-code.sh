@@ -40,7 +40,7 @@ function usage
 function linter
 {
 	color "Running PHP lint" cyan
-	find . -type f -iname "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 -P$(nproc) php  -lnf | grep "Parse error:"
+	find . -type f -iname "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 -P$(nproc) php -lnf | grep "Parse error:"
 	if [[ $? -eq 0 ]]; then
 		exit_error "Files listed above contain syntax errors"
 	else

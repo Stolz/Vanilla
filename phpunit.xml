@@ -33,6 +33,7 @@
 		</report>
 	</coverage>
 	<php>
+		<ini name="max_execution_time" value="0"/>
 		<ini name="memory_limit" value="-1"/>
 	</php>
 </phpunit>

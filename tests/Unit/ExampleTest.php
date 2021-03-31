@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Tests\Unit;
 
@@ -14,6 +14,6 @@ final class ExampleTest extends \Tests\TestCase
         $expected = 'foo';
         $actual = \App\Example::repeat($expected);
 
-        $this->assertEquals($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 }

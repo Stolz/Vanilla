@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 // Improve error messages
 if (php_sapi_name() === 'cli') {

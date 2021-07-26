@@ -58,7 +58,7 @@
 		"secure": "bin/fix-permissions.sh",
 		"clean": "bin/delete-old-files.sh",
 		"test": "phpunit --no-coverage",
-		"test-cover": "phpunit",
+		"test-cover": "XDEBUG_MODE=coverage phpunit",
 		"test-list": "phpunit --list-suites",
 		"test-list-default": "grep defaultTestSuite phpunit.xml",
 		"build": "composer install --no-suggest",

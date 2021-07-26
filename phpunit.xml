@@ -26,9 +26,9 @@
 		<report>
 			<!--<clover outputFile="tests/reports/clover.xml"/>-->
 			<!--<crap4j outputFile="tests/reports/crap4j.xml" threshold="50"/>-->
-			<!--<html outputDirectory="tests/reports/html" lowUpperBound="30" highLowerBound="70"/>-->
+			<html outputDirectory="tests/reports/html" lowUpperBound="30" highLowerBound="70"/>
 			<!--<php outputFile="tests/reports/coverage.php"/>-->
-			<text outputFile="php://stdout" showUncoveredFiles="false" showOnlySummary="true"/>
+			<text outputFile="php://stdout" showUncoveredFiles="false" showOnlySummary="true"/><!--Does not get shown when NunoMaduro\Collision printer is used-->
 			<!--<xml outputDirectory="tests/reports/xml-coverage"/>-->
 		</report>
 	</coverage>
